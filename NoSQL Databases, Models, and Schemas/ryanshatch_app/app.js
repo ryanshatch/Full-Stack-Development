@@ -1,37 +1,13 @@
 //* <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 /*
 *Developer: Ryan Hatch
-Date of development: 2024/24/02
-*Date of last modification: 2024/24/10
-Version: 3.0
-*Description: Main entry point for the application. This file is used to set up the Express application-
-* and configure the routes and middleware that the application will use.
-//* <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
-
-- Restructure the application to use the MVC pattern by creating a new folder tree structure and organizing existing files as the following tree structure:
-*   - app.js
-  | - The main entry point for the application.
-*   - app_server
-  | - Contains server-side code for the application.
-* |   - controllers
-  |   | - Holds controller functions for the application.
-* |   - models
-  |   | - Contains data models for the application.
-* |   - routes
-  |   | - Defines route handlers for the application.
-* |   - views
-  |   | - Stores view templates for server-side rendering.
-* |   - data
-* |   | - Contains data files used by the Travel application.
-
-* - public
-  | - Contains static files like CSS, JavaScript, and images.
-* - views
-  | - Stores view templates for client-side rendering.
-* - routes
-  | - Defines the route definitions for the application.
-*/
-//* <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+Date of development: 2024/24/11
+*Date of last modification: 2024/27/11
+Version: 4.0
+*Description: The app.js file serves as the entry point for the application. 
+              It is responsible for setting up the Express application,
+              configuring the view engine, adding middleware, and adding routes to the application. 
+//* <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>*/
 
 var createError = require('http-errors'); // Add createError
 var express = require('express');        // Add Express framework
@@ -55,9 +31,6 @@ var app = express(); // Create an Express application
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views')); // Make sure views are in app_server/views
 app.set('view engine', 'hbs');                                // Set Handlebars as the view engine
-
-// app.set('views', path.join(__dirname, 'app_server', 'views')); // Ensure views are in app_server/views
-// app.set('view engine', 'hbs'); // Set Handlebars as the view engine
 
 hbs.registerPartials(path.join(__dirname, 'app_server', 'views', 'partials')); 
 hbs.registerPartials(path.join(__dirname, 'app_server', 'views/partials')); // Register partials directory

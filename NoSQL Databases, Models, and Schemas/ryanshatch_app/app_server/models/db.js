@@ -1,3 +1,14 @@
+/*
+ * - Developer: Ryan Hatch
+ * - Date of development: 2024/24/11
+Date of last modification: 2024/24/11
+Version: 4.0
+<><><><><><><>><><><><><><><><><><><><><><><><>><><><><><><><><><>
+ * Description: This file is the database connection file for the Travlr app. 
+It connects to the MongoDB database and sets up the connection events and listeners for graceful shutdowns.
+<><><><><><><>><><><><><><><><><><><><><><><><>><><><><><><><><><>
+*/
+
 const mongoose = require('mongoose');
 const dbURI = 'mongodb+srv://ryanshatch:Rc2782765@cluster0.ohvap.mongodb.net/';
 const readLine = require('readline');

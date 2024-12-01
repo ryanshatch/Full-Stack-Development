@@ -1,8 +1,8 @@
 /*
  * - Developer: Ryan Hatch
- * - Date of development: 2024/24/02
-Date of last modification: 2024/24/10
-Version: 3.0
+ * - Date of development: 2024/24/11
+Date of last modification: 2024/24/11
+Version: 4.0
  * - Description: this file contains the controller functions for the travel routes, which is used to render the travel page view.
  */
 

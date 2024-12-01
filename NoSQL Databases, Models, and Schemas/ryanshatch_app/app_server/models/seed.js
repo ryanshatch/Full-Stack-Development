@@ -1,7 +1,7 @@
 /*
  * - Developer: Ryan Hatch
- * - Date of development: 2024/24/02
-Date of last modification: 2024/24/10
+ * - Date of development: 2024/24/11
+Date of last modification: 2024/24/11
 Version: 4.0
 <><><><><><><>><><><><><><><><><><><><><><><><>><><><><><><><><><>
  * Description: This file is used to seed the database with the data from the 'trips.json' file.

@@ -1,3 +1,10 @@
+/*
+ * - Developer: Ryan Hatch
+ * - Date of development: 2024/24/11
+Date of last modification: 2024/27/11
+Version: 4.0
+*/
+
 //* Old versions below that are not functional but kept for reference.
 
 // const seedData = [
