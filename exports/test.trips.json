@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "674aec59266aafe4efe52505"
+  },
+  "code": "GALR01214",
+  "name": "Gale Reef",
+  "length": "5 days",
+  "start": {
+    "$date": "2021-12-08T00:00:00.000Z"
+  },
+  "resort": "Emerald Bay, 3 stars",
+  "perPerson": "$799",
+  "image": "reef.jpg",
+  "description": "Step into the aquatic hall of fame at Gale Reef.\nWe're talking crystal-clear waters so pure they'll make diamonds jealous.\nExplore some pimpin' vibrant coral palaces and kick it with some marine af VIPs.\n\nWhether you're new to the game of divin' or you so happen to be a seasoned pro, this reef is still pure underwater 1,000% swagger.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674aec59266aafe4efe52506"
+  },
+  "code": "DUKR01315",
+  "name": "Dawson's Reef",
+  "length": "4 nights 5 days",
+  "start": {
+    "$date": "2021-03-15T08:00:00.000Z"
+  },
+  "resort": "Blue Lagoon, 4 stars",
+  "perPerson": "$1,199",
+  "image": "reef2.jpg",
+  "description": "Dawson's Reef ain't just a spot to go dive at, it's a genuine passport to get some access to marine royalty.\nFor this one, Picture a kaleidoscopic fish just chillin' with the sea turtles, and secret caves where you can find some mermaids playing underwater jazz concerts during the week or throwing raves on weekends.\n\nAnd Ima be honest with you guys, this spot is a treasure chest of underwater wonders that’ll make Donald Trump wish he were you instead of actually winning the election.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "674aec59266aafe4efe52507"
+  },
+  "code": "CLRK01261",
+  "name": "Claire's Reef",
+  "length": "4 nights 5 days",
+  "start": {
+    "$date": "2021-11-20T08:00:00.000Z"
+  },
+  "resort": "Coral Sands, 5 stars",
+  "perPerson": "$1,099",
+  "image": "reef3.jpg",
+  "description": "Claire's Reef is like a psychedelic odyssey into another dimension. The coral here glows like radioactive liquid rainbows, and the water reflects with fractals that feel like they’re straight out of a Skrillex concert.\nThis is the only place where its normal to swim with fish that look like they’ve been dipped in neon paint, or to converse hours with a sea turtle that speaks in good vibes.\n\nThis place doesn’t just show you whats so below the sea, it is more like a gateway to a water park version of a Narnia multiverse.",
+  "__v": 0
+}]
