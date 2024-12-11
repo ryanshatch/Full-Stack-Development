@@ -1,4 +1,130 @@
-### Schema for test data in the trips collection:
+# Travlr Getaways Admin Panel
+
+```ps
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\rshat\Documents\School\Computer Science School\Current Classes\CS 465\00 Organized\branch6\travlr\ryanshatch_app\app_admin> ng serve
+
+Initial chunk files | Names         |  Raw size
+polyfills.js        | polyfills     |  90.20 kB |
+main.js             | main          |   5.57 kB |
+styles.css          | styles        | 106 bytes |
+
+                    | Initial total |  95.87 kB
+
+Application bundle generation complete. [32.877 seconds]
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4200/
+  ➜  press h + enter to show help
+\ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  5.70 kB |
+
+Application bundle generation complete. [0.366 seconds]
+
+Page reload sent to client(s).
+Initial chunk files | Names | Raw size
+main.js             | main  |  5.70 kB |
+
+Application bundle generation complete. [0.294 seconds]
+
+Page reload sent to client(s).
+```
+
+<!-- # Travlr Getaways
+
+## Overview
+
+Travlr Getaways is a comprehensive travel application designed to provide users with detailed information about various travel destinations, including trips, resorts, and activities. The application is built using Node.js and Express, following the Model-View-Controller (MVC) architectural pattern.
+
+## Features
+
+- **Browse Trips**: View a list of available trips with detailed information.
+- **Trip Details**: Get detailed information about a specific trip, including the resort, length, cost per person, and description.
+- **Dynamic Data**: Fetch trip data dynamically from an API.
+- **Seeding Database**: Seed the database with initial trip data.
+
+## Installation
+
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/yourusername/travlr-getaways.git
+   cd travlr-getaways
+2. **Install dependencies**:
+   ```sh
+   npm install
+3. **Set up the database**:  Ensure you have MongoDB installed and running. Update the database connection string in app_server/app_api/models/db.js if necessary.
+4. **Seed the database**:
+   ```sh
+   node app_server/app_api/models/seed.js
+5. **Start the server**:
+   ```sh
+   npm start
+6. **View the application**: Open http://localhost:3000 in your browser.
+7. **API Documentation**: View the API documentation at http://localhost:3000/api-docs.
+
+### API Endpoints
+> GET /api/trips: Retrieve all trips.
+
+> GET /api/trips/:code: Retrieve a single trip by code.
+
+### Project Structure
+```sh
+travlr-getaways/
+├── app.js
+├── bin/
+│   └── www
+├── package.json
+├── app_server/
+│   ├── app_api/
+│   │   ├── controllers/
+│   │   │   └── trips.js
+│   │   ├── models/
+│   │   │   ├── db.js
+│   │   │   ├── seed.js
+│   │   │   └── trips.js
+│   │   └── routes/
+│   │       └── index.js
+│   ├── controllers/
+│   │   ├── about.js
+│   │   ├── contact.js
+│   │   ├── main.js
+│   │   ├── meals.js
+│   │   ├── news.js
+│   │   ├── rooms.js
+│   │   └── travlr.js
+│   ├── routes/
+│   │   ├── about.js
+│   │   ├── contact.js
+│   │   ├── index.js
+│   │   ├── meals.js
+│   │   ├── news.js
+│   │   ├── rooms.js
+│   │   └── travel.js
+│   └── views/
+│       ├── partials/
+│       └── ...
+└── data/
+    ├── 
+    └── ...
+```
+### Usage
+> Browse Trips: Navigate to /travel to view a list of available trips.
+> Trip Details: Click on a trip to view detailed information.
+> API Documentation: View the API documentation at /api-docs.
+### Contributing
+Contributions are welcome! Please fork the repository and submit a pull request.
+### License
+This project is licensed under the MIT License.
+### Contact
+For any inquiries, please contact Ryan Hatch at ryanshatch@gmail.com  -->
+
+# Schema for test data in the trips collection:
 > Exported as JSON from MongoDB Compass running from URI: <code>cluster0.ohvap.mongodb.net -> test -> trips</code>
 <hr>
 
