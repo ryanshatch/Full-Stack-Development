@@ -17,7 +17,7 @@ import { TripListingComponent } from './trip-listing/trip-listing.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Admin!';
+  title = 'Welcome to the Administrators Dashboard:';
 }
 
 // import { Component } from '@angular/core';

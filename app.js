@@ -9,67 +9,144 @@ Version: 5.0
               configuring the view engine, adding middleware, and adding routes to the application. 
 //* <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>*/
 
-var createError = require('http-errors'); // Add createError
-var express = require('express');        // Add Express framework
-var path = require('path');             // Add path module to work with file and directory paths
-var hbs = require('hbs');              // Add Handlebars
-var cookieParser = require('cookie-parser'); 
-var logger = require('morgan');
+var createError = require("http-errors");
+var express = require("express");
+var path = require("path");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
+var handlebars = require("hbs");
 
-//* Add routes to the application
-var aboutRouter = require('./app_server/routes/about');         // Add routes to the about
-var contactRouter = require('./app_server/routes/contact');    // Add routes to the contact
-var indexRouter = require('./app_server/routes/index');       // Add routes to the index
-var mealsRouter = require('./app_server/routes/meals');      // Add routes to the meals
-var newsRouter = require('./app_server/routes/news');       // Add routes to the news
-var roomsRouter = require('./app_server/routes/rooms');    // Add routes to the rooms
-var travelRouter = require('./app_server/routes/travel'); // Add routes to the travel
-var usersRouter = require('./app_server/routes/users');  // Add routes to the users
-var apiRouter = require('./app_server/app_api/routes'); // Add routes to the API
+var indexRouter = require("./app_server/routes/index");
+var usersRouter = require("./app_server/routes/users");
+var travelRouter = require("./app_server/routes/travel");
+var roomsRouter = require("./app_server/routes/rooms");
+var newsRouter = require("./app_server/routes/news");
+var mealsRouter = require("./app_server/routes/meals");
+var contactRouter = require("./app_server/routes/contact");
+var aboutRouter = require("./app_server/routes/about");
+var apiRouter = require("./app_api/routes/index");
 
-// Repoint the db module
-require('./app_server/app_api/models/db');
+require("./app_api/models/db");
 
-var app = express(); // Create an Express application
+var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'app_server', 'views')); // Make sure views are in app_server/views
-app.set('view engine', 'hbs');                                // Set Handlebars as the view engine
+app.set("views", path.join(__dirname, "app_server", "views"));
+// register handlebars partials (https://www.npmjs.com/package/hbs)
+handlebars.registerPartials(__dirname + "/app_server/views/partials");
+app.set("view engine", "hbs");
 
-hbs.registerPartials(path.join(__dirname, 'app_server', 'views', 'partials')); 
-hbs.registerPartials(path.join(__dirname, 'app_server', 'views/partials')); // Register partials directory
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use(logger('dev'));                                       // Add logger helper function
-app.use(express.json());                                     // Add helper function to parse JSON data
-app.use(express.urlencoded({ extended: false }));           // Add middleware to parse URL-encoded data
-app.use(cookieParser());                                   // Add cookie parser helper function
-app.use(express.static(path.join(__dirname, 'public')));  // Add middleware to serve static files
+// Allow CORS
+app.use("/api", (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  next();
+});
 
-app.use('/about', aboutRouter);         // Add about route to the application
-app.use('/contact', contactRouter);    // Add contact route
-app.use('/', indexRouter);            // Add index route
-app.use('/meals', mealsRouter);      // Add meals route
-app.use('/news', newsRouter);       // Add news route
-app.use('/rooms', roomsRouter);    // Add rooms route
-app.use('/travel', travelRouter); // Add travel route
-app.use('/users', usersRouter);  // Add users route
-app.use('/api', apiRouter);     // Add API route
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
+app.use("/travel", travelRouter);
+app.use("/rooms", roomsRouter);
+app.use("/news", newsRouter);
+app.use("/meals", mealsRouter);
+app.use("/contact", contactRouter);
+app.use("/about", aboutRouter);
+app.use("/api", apiRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) { // Add error handler
-  next(createError(404));         // Forward to error handler with 404 status
+app.use(function (req, res, next) {
+  next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {                                 // Add error handler
-  res.locals.message = err.message;                                    // Set message
-  res.locals.error = req.app.get('env') === 'development' ? err : {}; // Set error
+app.use(function (err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get("env") === "development" ? err : {};
 
-  res.status(err.status || 500); // Set status code to 500
-  res.render('error');          // Render error page
+  // render the error page
+  res.status(err.status || 500);
+  res.render("error");
 });
 
 module.exports = app;
+
+
+// ryanshatch_app v2 module six:
+
+// var createError = require('http-errors'); // Add createError
+// var express = require('express');        // Add Express framework
+// var path = require('path');             // Add path module to work with file and directory paths
+// var hbs = require('hbs');              // Add Handlebars
+// var cookieParser = require('cookie-parser'); 
+// var logger = require('morgan');
+
+// //* Add routes to the application
+// var aboutRouter = require('./app_server/routes/about');         // Add routes to the about
+// var contactRouter = require('./app_server/routes/contact');    // Add routes to the contact
+// var indexRouter = require('./app_server/routes/index');       // Add routes to the index
+// var mealsRouter = require('./app_server/routes/meals');      // Add routes to the meals
+// var newsRouter = require('./app_server/routes/news');       // Add routes to the news
+// var roomsRouter = require('./app_server/routes/rooms');    // Add routes to the rooms
+// var travelRouter = require('./app_server/routes/travel'); // Add routes to the travel
+// var usersRouter = require('./app_server/routes/users');  // Add routes to the users
+// var apiRouter = require('./app_server/app_api/routes'); // Add routes to the API
+
+// // Repoint the db module
+// require('./app_server/app_api/models/db');
+
+// var app = express(); // Create an Express application
+
+// // view engine setup
+// app.set('views', path.join(__dirname, 'app_server', 'views')); // Make sure views are in app_server/views
+// app.set('view engine', 'hbs');                                // Set Handlebars as the view engine
+
+// hbs.registerPartials(path.join(__dirname, 'app_server', 'views', 'partials')); 
+// hbs.registerPartials(path.join(__dirname, 'app_server', 'views/partials')); // Register partials directory
+
+// app.use(logger('dev'));                                       // Add logger helper function
+// app.use(express.json());                                     // Add helper function to parse JSON data
+// app.use(express.urlencoded({ extended: false }));           // Add middleware to parse URL-encoded data
+// app.use(cookieParser());                                   // Add cookie parser helper function
+// app.use(express.static(path.join(__dirname, 'public')));  // Add middleware to serve static files
+
+// app.use('/about', aboutRouter);         // Add about route to the application
+// app.use('/contact', contactRouter);    // Add contact route
+// app.use('/', indexRouter);            // Add index route
+// app.use('/meals', mealsRouter);      // Add meals route
+// app.use('/news', newsRouter);       // Add news route
+// app.use('/rooms', roomsRouter);    // Add rooms route
+// app.use('/travel', travelRouter); // Add travel route
+// app.use('/users', usersRouter);  // Add users route
+// app.use('/api', apiRouter);     // Add API route
+
+// // catch 404 and forward to error handler
+// app.use(function(req, res, next) { // Add error handler
+//   next(createError(404));         // Forward to error handler with 404 status
+// });
+
+// // error handler
+// app.use(function(err, req, res, next) {                                 // Add error handler
+//   res.locals.message = err.message;                                    // Set message
+//   res.locals.error = req.app.get('env') === 'development' ? err : {}; // Set error
+
+//   res.status(err.status || 500); // Set status code to 500
+//   res.render('error');          // Render error page
+// });
+
+// module.exports = app;
+
+//
 
 //* Version 2.0 below:
 
