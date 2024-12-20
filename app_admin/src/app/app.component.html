@@ -1,0 +1,29 @@
+<!--
+ * - Developer: Ryan Hatch
+Date of development: 11/24/2024
+*Date of last modification: 12/12/2024
+Version: 6.4
+ * - Description: The AppComponent is the root component of the application. It is the first component that is loaded when the application starts.
+-->
+
+<app-navbar></app-navbar>
+<div class="container">
+  <router-outlet></router-outlet>
+  <!-- <app-trip-listing></app-trip-listing> -->
+</div>
+
+<!-- *Version from Branch6(.3) -->
+
+<!-- <h1>{{ title }}</h1> -->
+<div class="container">
+ <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">{{ title }}</a>
+    </div>
+  </nav>
+
+<!--* Commented out the trip listing component and added the trip card component to the app component. This will display a single trip card in the app component. -->
+  <!-- <app-trip-listing></app-trip-listing> -->
+
+  <!-- <router-outlet></router-outlet>
+</div> -->

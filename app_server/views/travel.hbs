@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{{!-- * - Developer: Ryan Hatch
+Date of development: 11/24/2024
+*Date of last modification: 12/12/2024
+Version: 6.4
+ * - Descriptition: This is the travel page of the website. It displays the different travel destinations that the user can choose from. --}}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Dive Sites - Beach Resorts</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+	<div id="background">
+		<div id="page">
+			{{> header}}
+			<div id="contents">
+				<div class="box">
+					<div>
+						<div class="body">
+							<h1>Travel</h1>
+							<ul id="sites">
+								{{#each trips}}
+								<li>
+									<a href="/api/trips/{{this.code}}"><img src="images/{{this.image}}" alt="Img"></a>
+									<h2><a href="/travel">{{this.name}}</a></h2>
+									{{{this.description}}}
+								</li>
+								{{/each}}
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{> footer}}
+	</div>
+</body>
+</html>

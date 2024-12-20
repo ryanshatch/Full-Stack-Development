@@ -1,291 +1,97 @@
-### Schema for test data in the trips collection:
-> Exported as JSON from MongoDB Compass running from URI: <code>cluster0.ohvap.mongodb.net -> test -> trips</code>
-<hr>
+# App_Admin:
+
+This project was generated with the [Angular CLI]() and uses Express.js as a backend server that serves the Angular app. Node.js is used to run the Express server which communicates with the MongoDB database using the Mongoose library as a database driver.
+The UI is built using Angular Material and Angular Flex Layout. The UX is designed to be simple and straightforward, tailored towards having quality usability and accessibility.
+
+Note: Run the backend server before running the Angular app.
+
+> The backend server is located in the `server` directory.<br>
+
+> Seed the database using the `seed.js` script in the `app_api/models` directory.
+
+## Install:
+
+To begin, run `npm install` in order to install the necessary dependencies to be able to run the Angular app.
+
+## Development server:
+
+After installing all of the necessary dependencies, run `ng serve` in order to start the Angular development server. Next, visit `http://localhost:4200/` in your browser to view the app.
+
+> The backend server must be running in order to use the app via running the command `node ./bin/www` in the root directory of the project.
+<br><br>
+> You will also need to seed the database using the `node ./app_api/models/seed.js` script in the `app_api/models` directory.
+
+### API Response:
 
 ```json
-{
-  "count": 3,
-  "fields": [
-    {
-      "name": "_id",
-      "path": [
-        "_id"
-      ],
-      "count": 3,
-      "type": "ObjectId",
-      "probability": 1,
-      "hasDuplicates": false,
-      "types": [
-        {
-          "name": "ObjectId",
-          "path": [
-            "_id"
-          ],
-          "count": 3,
-          "probability": 1,
-          "unique": 3,
-          "hasDuplicates": false,
-          "values": [
-            "674aec59266aafe4efe52505",
-            "674aec59266aafe4efe52506",
-            "674aec59266aafe4efe52507"
-          ],
-          "bsonType": "ObjectId"
-        }
-      ]
-    },
-    {
-      "name": "__v",
-      "path": [
-        "__v"
-      ],
-      "count": 3,
-      "type": "Int32",
-      "probability": 1,
-      "hasDuplicates": true,
-      "types": [
-        {
-          "name": "Int32",
-          "path": [
-            "__v"
-          ],
-          "count": 3,
-          "probability": 1,
-          "unique": 1,
-          "hasDuplicates": true,
-          "values": [
-            0,
-            0,
-            0
-          ],
-          "bsonType": "Int32"
-        }
-      ]
-    },
-    {
-      "name": "code",
-      "path": [
-        "code"
-      ],
-      "count": 3,
-      "type": "String",
-      "probability": 1,
-      "hasDuplicates": false,
-      "types": [
-        {
-          "name": "String",
-          "path": [
-            "code"
-          ],
-          "count": 3,
-          "probability": 1,
-          "unique": 3,
-          "hasDuplicates": false,
-          "values": [
-            "GALR01214",
-            "DUKR01315",
-            "CLRK01261"
-          ],
-          "bsonType": "String"
-        }
-      ]
-    },
-    {
-      "name": "description",
-      "path": [
-        "description"
-      ],
-      "count": 3,
-      "type": "String",
-      "probability": 1,
-      "hasDuplicates": false,
-      "types": [
-        {
-          "name": "String",
-          "path": [
-            "description"
-          ],
-          "count": 3,
-          "probability": 1,
-          "unique": 3,
-          "hasDuplicates": false,
-          "values": [
-            "Step into the aquatic hall of fame at Gale Reef.\nWe're talking crystal-clear waters so pure they'll make diamonds jealous.\nExplore some pimpin' vibrant coral palaces and kick it with some marine af VIPs.\n\nWhether you're new to the game of divin' or you so happen to be a seasoned pro, this reef is still pure underwater 1,000% swagger.",
-            "Dawson's Reef ain't just a spot to go dive at, it's a genuine passport to get some access to marine royalty.\nFor this one, Picture a kaleidoscopic fish just chillin' with the sea turtles, and secret caves where you can find some mermaids playing underwater jazz concerts during the week or throwing raves on weekends.\n\nAnd Ima be honest with you guys, this spot is a treasure chest of underwater wonders that’ll make Donald Trump wish he were you instead of actually winning the election.",
-            "Claire's Reef is like a psychedelic odyssey into another dimension. The coral here glows like radioactive liquid rainbows, and the water reflects with fractals that feel like they’re straight out of a Skrillex concert.\nThis is the only place where its normal to swim with fish that look like they’ve been dipped in neon paint, or to converse hours with a sea turtle that speaks in good vibes.\n\nThis place doesn’t just show you whats so below the sea, it is more like a gateway to a water park version of a Narnia multiverse."
-          ],
-          "bsonType": "String"
-        }
-      ]
-    },
-    {
-      "name": "image",
-      "path": [
-        "image"
-      ],
-      "count": 3,
-      "type": "String",
-      "probability": 1,
-      "hasDuplicates": false,
-      "types": [
-        {
-          "name": "String",
-          "path": [
-            "image"
-          ],
-          "count": 3,
-          "probability": 1,
-          "unique": 3,
-          "hasDuplicates": false,
-          "values": [
-            "reef.jpg",
-            "reef2.jpg",
-            "reef3.jpg"
-          ],
-          "bsonType": "String"
-        }
-      ]
-    },
-    {
-      "name": "length",
-      "path": [
-        "length"
-      ],
-      "count": 3,
-      "type": "String",
-      "probability": 1,
-      "hasDuplicates": true,
-      "types": [
-        {
-          "name": "String",
-          "path": [
-            "length"
-          ],
-          "count": 3,
-          "probability": 1,
-          "unique": 2,
-          "hasDuplicates": true,
-          "values": [
-            "5 days",
-            "4 nights 5 days",
-            "4 nights 5 days"
-          ],
-          "bsonType": "String"
-        }
-      ]
-    },
-    {
-      "name": "name",
-      "path": [
-        "name"
-      ],
-      "count": 3,
-      "type": "String",
-      "probability": 1,
-      "hasDuplicates": false,
-      "types": [
-        {
-          "name": "String",
-          "path": [
-            "name"
-          ],
-          "count": 3,
-          "probability": 1,
-          "unique": 3,
-          "hasDuplicates": false,
-          "values": [
-            "Gale Reef",
-            "Dawson's Reef",
-            "Claire's Reef"
-          ],
-          "bsonType": "String"
-        }
-      ]
-    },
-    {
-      "name": "perPerson",
-      "path": [
-        "perPerson"
-      ],
-      "count": 3,
-      "type": "String",
-      "probability": 1,
-      "hasDuplicates": false,
-      "types": [
-        {
-          "name": "String",
-          "path": [
-            "perPerson"
-          ],
-          "count": 3,
-          "probability": 1,
-          "unique": 3,
-          "hasDuplicates": false,
-          "values": [
-            "$799",
-            "$1,199",
-            "$1,099"
-          ],
-          "bsonType": "String"
-        }
-      ]
-    },
-    {
-      "name": "resort",
-      "path": [
-        "resort"
-      ],
-      "count": 3,
-      "type": "String",
-      "probability": 1,
-      "hasDuplicates": false,
-      "types": [
-        {
-          "name": "String",
-          "path": [
-            "resort"
-          ],
-          "count": 3,
-          "probability": 1,
-          "unique": 3,
-          "hasDuplicates": false,
-          "values": [
-            "Emerald Bay, 3 stars",
-            "Blue Lagoon, 4 stars",
-            "Coral Sands, 5 stars"
-          ],
-          "bsonType": "String"
-        }
-      ]
-    },
-    {
-      "name": "start",
-      "path": [
-        "start"
-      ],
-      "count": 3,
-      "type": "Date",
-      "probability": 1,
-      "hasDuplicates": false,
-      "types": [
-        {
-          "name": "Date",
-          "path": [
-            "start"
-          ],
-          "count": 3,
-          "probability": 1,
-          "unique": 3,
-          "hasDuplicates": false,
-          "values": [
-            "2021-12-08T00:00:00.000Z",
-            "2021-03-15T08:00:00.000Z",
-            "2021-11-20T08:00:00.000Z"
-          ],
-          "bsonType": "Date"
-        }
-      ]
-    }
-  ]
-}
+[{"_id":"675ec41fe09e0bca68c7043c","code":"GALR210214","name":"Gale Reef","length":"77 nights / 78 days","start":"2021-02-14T08:00:00.000Z","resort":"Emerald Bay, 3 stars","perPerson":"799.00","image":"reef1.jpg","description":"<p>Step into the aquatic hall of fame at Gale Reef. We're talking crystal-clear waters so pure they'll make diamonds jealous.</p><br><p>Explore some pimpin' vibrant coral palaces and kick it with some marine af VIPs. </p><br><br><p>Whether you're new to the game of divin' or you so happen to be a seasoned pro, this reef is still pure underwater 1,000% swagger.</p>","__v":0}]
 ```
+<br><hr>
+
+## Generating Components and Services in Angular CLI:
+
+> Note: Angular CLI was the chosen framework to create the UI of the app.
+
+In order to generate new components and services, you can run the command: `ng generate component component-name`, `ng generate service service-name`.<br>
+<br>You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module` to generate directives, pipes, services, classes, guards, interfaces, modules, and enums.
+
+<br>
+
+> Replace <code>component-name</code> and <code>service-name</code> with the name of the component or service you would like to generate.
+
+## Build:
+
+Next, in order to build the project, run the command `ng build` in order to build the application for production.
+
+> The latest build artifacts will be stored in the `./app_admin/dist/` directory.
+<br>
+
+## Building the Angular App:
+
+```ps
+PS C:\Users\rshat\Documents\School\Computer Science School\Current Classes\CS 465\00 Organized\branch6\travlr\ryanshatch_app\app_admin> ng serve
+Initial chunk files | Names         |  Raw size
+polyfills.js        | polyfills     |  90.20 kB |
+main.js             | main          |   5.57 kB |
+styles.css          | styles        | 106 bytes |
+
+                    | Initial total |  95.87 kB
+
+Application bundle generation complete. [32.877 seconds]
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:4200/
+  ➜  press h + enter to show help
+\ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  5.70 kB |
+
+Application bundle generation complete. [0.366 seconds]
+
+Page reload sent to client(s).
+Initial chunk files | Names | Raw size
+main.js             | main  |  5.70 kB |
+
+Application bundle generation complete. [0.294 seconds]
+
+Page reload sent to client(s).
+
+```
+
+## Running unit tests:
+
+In order to run unit tests after building the project, you can use the command, `ng test` to execute the tests.
+
+> Jasmine was the testing framework that was used to write the unit tests and [Karma](https://karma-runner.github.io) was used as the test runner for the unit tests.
+
+## Running end-to-end tests:
+
+Next, after running the unit tests on the application, you can run end-to-end tests with the command, `ng e2e`. This command will start the testing environment using [Protractor](http://www.protractortest.org/).
+
+## Help with Angular CLI:
+
+If you need further help with the Angular CLI, or any of the commands mentioned above that were used in this project, you can use the command `ng help`.
+<br><br>
+
+<b>*Respectfully*, If you are *still* struggling, please kindly remember to *breathe* and just simply parse the following, "<code>How do I `your_question_here`</code>" into Google.</b>
