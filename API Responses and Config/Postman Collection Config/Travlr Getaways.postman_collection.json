@@ -1,0 +1,463 @@
+{
+	"info": {
+		"_postman_id": "b2e95bee-ef00-4e09-8f2b-4035b7f14a8c",
+		"name": "Travlr Getaways",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "39469155"
+	},
+	"item": [
+		{
+			"name": "register and login as admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 300ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response has the required fields\", function () {\r",
+							"    const responseData = xml2Json(pm.response.text());\r",
+							"    \r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.token).to.exist;\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Token is a non-empty string\", function () {\r",
+							"    const responseData = xml2Json(pm.response.text());\r",
+							"    \r",
+							"    pm.expect(responseData.token).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Token should not be empty\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Content-Type header is 'text/xml'\", function () {\r",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.include('text/xml');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"removeRefererHeaderOnRedirect": true,
+				"followOriginalHttpMethod": true,
+				"followAuthorizationHeader": true,
+				"protocolVersion": "auto",
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "banana",
+						"username": "admin"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"admin\",\r\n  \"email\": \"adminbanana@gmail.com\",\r\n  \"password\": \"banana\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/register"
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzY0ZWRjMWRlMGNkZThmMjIyOGRjYjIiLCJlbWFpbCI6InJ5YW5zaGF0Y2hAZ21haWwuY29tIiwibmFtZSI6InJ5YW4iLCJpYXQiOjE3MzQ2Njc3MTMsImV4cCI6MTczNDY3ODUxM30.1hM7EZL5wXTetYRLUCEmO4VYl-rlFnVclqP8GvIYzLU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"ryan\",\r\n  \"email\": \"ryanshatch@gmail.com\",\r\n  \"password\": \"1abcdefg23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:4200"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "244"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f4-pt8nn/4gAp1vAbNhwXXTi2Pd4bw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Dec 2024 04:21:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzY0ZWRjMWRlMGNkZThmMjIyOGRjYjIiLCJlbWFpbCI6InJ5YW5zaGF0Y2hAZ21haWwuY29tIiwibmFtZSI6InJ5YW4iLCJpYXQiOjE3MzQ2Njg0NzMsImV4cCI6MTczNDY3OTI3M30.42h5yCr28-GdI6rWJZ_x7GXyiKwsXcX4uG5ULigPwUk\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login as ryan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"ryanshatch@gmail.com\",\r\n  \"password\": \"1abcdefg23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/login"
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"ryanshatch@gmail.com\",\r\n  \"password\": \"1abcdefg23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:4200"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "244"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f4-VFlTEZzKLaxwXmEbm8R8dPvD8Ic\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Dec 2024 01:39:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzY0ZWRjMWRlMGNkZThmMjIyOGRjYjIiLCJlbWFpbCI6InJ5YW5zaGF0Y2hAZ21haWwuY29tIiwibmFtZSI6InJ5YW4iLCJpYXQiOjE3MzQ3NDUxNzYsImV4cCI6MTczNDc1NTk3Nn0.1ZaatrW8wPExEFISoluUnc0PPlsgP9fhoNaUdfgth7Y\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get trips",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"ryanshatch@gmail.com\",\r\n  \"password\": \"1abcdefg23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/trips"
+			},
+			"response": [
+				{
+					"name": "Get Trips",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"ryanshatch@gmail.com\",\r\n  \"password\": \"1abcdefg23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/trips"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:4200"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2162"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"872-YRPOCe46VS6hIjMyBTuAXpBCIb0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Dec 2024 01:44:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"67633f4d3cb6c2c06afeefe3\",\n        \"code\": \"GALR210214\",\n        \"name\": \"Gale Reef\",\n        \"length\": \"77 nights / 78 days\",\n        \"start\": \"2021-02-14T08:00:00.000Z\",\n        \"resort\": \"Emerald Bay, 3 stars\",\n        \"perPerson\": \"799.00\",\n        \"image\": \"reef1.jpg\",\n        \"description\": \"<p>Step into the aquatic hall of fame at Gale Reef. We're talking crystal-clear waters so pure they'll make diamonds jealous.</p><br><p>Explore some pimpin' vibrant coral palaces and kick it with some marine af VIPs. </p><br><br><p>Whether you're new to the game of divin' or you so happen to be a seasoned pro, this reef is still pure underwater 1,000% swagger.</p>\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67633f4d3cb6c2c06afeefe4\",\n        \"code\": \"DWAR210315\",\n        \"name\": \"Dawson's Reef\",\n        \"length\": \"4 nights / 5 days\",\n        \"start\": \"2021-03-15T08:00:00.000Z\",\n        \"resort\": \"Blue Lagoon, 4 stars\",\n        \"perPerson\": \"1199.00\",\n        \"image\": \"reef2.jpg\",\n        \"description\": \"<p>Dawson's Reef ain't just a spot to go dive at, it's a genuine passport to get some access to marine royalty.<br></p>For this one, Picture a kaleidoscopic fish just chillin' with the sea turtles, and secret caves where you can find some mermaids playing underwater jazz concerts during the week or throwing raves on weekends.<br></p>And Ima be honest with you guys, this spot is a treasure chest of underwater wonders that’ll make Donald Trump wish he were you instead of actually winning the election.</p>\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67633f4d3cb6c2c06afeefe5\",\n        \"code\": \"CLAR210621\",\n        \"name\": \"Claire's Reef\",\n        \"length\": \"4 nights / 5 days\",\n        \"start\": \"2021-06-21T08:00:00.000Z\",\n        \"resort\": \"Coral Sands, 5 stars\",\n        \"perPerson\": \"6942069.42\",\n        \"image\": \"reef3.jpg\",\n        \"description\": \"<p>Claire's Reef is like a psychedelic odyssey into another dimension.</p><p>The coral here glows like radioactive liquid rainbows, and the water reflects with fractals that feel like they’re straight out of a Skrillex concert.</p><p>This is the only place where its normal to swim with fish that look like they’ve been dipped in neon paint, or to converse hours with a sea turtle that speaks in good vibes. Keep in mind,this resort doesn’t just show you whats so below the sea, it is more like a gateway to a water park version of a Narnia multiverse.</p>\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "trips",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzY0ZWRjMWRlMGNkZThmMjIyOGRjYjIiLCJlbWFpbCI6InJ5YW5zaGF0Y2hAZ21haWwuY29tIiwibmFtZSI6InJ5YW4iLCJpYXQiOjE3MzQ3NDUxNzYsImV4cCI6MTczNDc1NTk3Nn0.1ZaatrW8wPExEFISoluUnc0PPlsgP9fhoNaUdfgth7Y"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": \"G1U2A3t4e5\",\r\n  \"name\": \"Guatemala in Heaven\",\r\n  \"length\": \"4 nights / 5 days\",\r\n  \"start\": \"2021-03-15T08:00:00Z\",\r\n  \"resort\": \"Antigua, 5 stars\",\r\n  \"perPerson\": \"199.00\",\r\n  \"image\": \"reef2.jpg\",\r\n  \"description\": \"<p>If only you knew.. Thats all I gotta say bro..</p>\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/trips"
+			},
+			"response": [
+				{
+					"name": "Get Trips",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"ryanshatch@gmail.com\",\r\n  \"password\": \"1abcdefg23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/trips"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:4200"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, POST, PUT, DELETE"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2162"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"872-YRPOCe46VS6hIjMyBTuAXpBCIb0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 21 Dec 2024 01:44:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"67633f4d3cb6c2c06afeefe3\",\n        \"code\": \"GALR210214\",\n        \"name\": \"Gale Reef\",\n        \"length\": \"77 nights / 78 days\",\n        \"start\": \"2021-02-14T08:00:00.000Z\",\n        \"resort\": \"Emerald Bay, 3 stars\",\n        \"perPerson\": \"799.00\",\n        \"image\": \"reef1.jpg\",\n        \"description\": \"<p>Step into the aquatic hall of fame at Gale Reef. We're talking crystal-clear waters so pure they'll make diamonds jealous.</p><br><p>Explore some pimpin' vibrant coral palaces and kick it with some marine af VIPs. </p><br><br><p>Whether you're new to the game of divin' or you so happen to be a seasoned pro, this reef is still pure underwater 1,000% swagger.</p>\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67633f4d3cb6c2c06afeefe4\",\n        \"code\": \"DWAR210315\",\n        \"name\": \"Dawson's Reef\",\n        \"length\": \"4 nights / 5 days\",\n        \"start\": \"2021-03-15T08:00:00.000Z\",\n        \"resort\": \"Blue Lagoon, 4 stars\",\n        \"perPerson\": \"1199.00\",\n        \"image\": \"reef2.jpg\",\n        \"description\": \"<p>Dawson's Reef ain't just a spot to go dive at, it's a genuine passport to get some access to marine royalty.<br></p>For this one, Picture a kaleidoscopic fish just chillin' with the sea turtles, and secret caves where you can find some mermaids playing underwater jazz concerts during the week or throwing raves on weekends.<br></p>And Ima be honest with you guys, this spot is a treasure chest of underwater wonders that’ll make Donald Trump wish he were you instead of actually winning the election.</p>\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67633f4d3cb6c2c06afeefe5\",\n        \"code\": \"CLAR210621\",\n        \"name\": \"Claire's Reef\",\n        \"length\": \"4 nights / 5 days\",\n        \"start\": \"2021-06-21T08:00:00.000Z\",\n        \"resort\": \"Coral Sands, 5 stars\",\n        \"perPerson\": \"6942069.42\",\n        \"image\": \"reef3.jpg\",\n        \"description\": \"<p>Claire's Reef is like a psychedelic odyssey into another dimension.</p><p>The coral here glows like radioactive liquid rainbows, and the water reflects with fractals that feel like they’re straight out of a Skrillex concert.</p><p>This is the only place where its normal to swim with fish that look like they’ve been dipped in neon paint, or to converse hours with a sea turtle that speaks in good vibes. Keep in mind,this resort doesn’t just show you whats so below the sea, it is more like a gateway to a water park version of a Narnia multiverse.</p>\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzY0ZWRjMWRlMGNkZThmMjIyOGRjYjIiLCJlbWFpbCI6InJ5YW5zaGF0Y2hAZ21haWwuY29tIiwibmFtZSI6InJ5YW4iLCJpYXQiOjE3MzQ2Njg0NzMsImV4cCI6MTczNDY3OTI3M30.42h5yCr28-GdI6rWJZ_x7GXyiKwsXcX4uG5ULigPwUk"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

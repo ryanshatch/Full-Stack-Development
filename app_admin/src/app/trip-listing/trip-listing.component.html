@@ -1,0 +1,19 @@
+<!--
+ * - Developer: Ryan Hatch
+Date of development: 11/24/2024
+*Date of last modification: 12/12/2024
+Version: 7.1
+ * - Description: The trip-listing component is a child component of the app component. It is responsible for displaying a list of trips.
+-->
+
+<!-- <pre>{{trips | json}}</pre> -->
+
+<div *ngIf="isLoggedIn()">
+  <button (click)="addTrip()" class="btn btn-info">Add Trip</button>
+</div>
+
+<div class="row">
+  <div *ngFor="let trip of trips" class="col-md-4">
+    <app-trip-card [trip]="trip" class="card-deck mt-2"></app-trip-card>
+  </div>
+</div>

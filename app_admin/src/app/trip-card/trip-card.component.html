@@ -1,0 +1,29 @@
+<!--
+ * - Developer: Ryan Hatch
+Date of development: 11/24/2024
+*Date of last modification: 12/12/2024
+Version: 7.1
+ * - Description: The trip-card component is a child component of the trip-listing component. It is responsible for displaying a single trip.
+-->
+
+<div class="card">
+  <div class="card-header">{{ trip.name }}</div>
+  <img
+    src="assets/images/{{ trip.image }}"
+    alt="trip thumbnail"
+    class="card-img-top"
+  />
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted">
+      {{ trip.resort }}
+    </h6>
+    <p class="card-subtitle mt-3 mb-3 text-muted">
+      {{ trip.length }} only
+      {{ trip.perPerson | currency : "USD" : "symbol" }} per person
+    </p>
+    <p class="card-text" [innerHTML]="trip.description"></p>
+    <div *ngIf="isLoggedIn()">
+      <button (click)="editTrip(trip)" class="btn btn-info">Edit Trip</button>
+    </div>
+  </div>
+</div>
