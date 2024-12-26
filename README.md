@@ -1,5 +1,5 @@
 # Project API Documentation
-
+<img src="https://raw.githubusercontent.com/ryanshatch/Full-Stack-Development/main/API%20Responses%20and%20Config/19%20billion%20dollar%20resort.JPG" alt="19 billion dollar resort">
 This document outlines the endpoints for both the backend and frontend components of the project, accessible locally for development purposes.
 
 ## Backend API Endpoints
