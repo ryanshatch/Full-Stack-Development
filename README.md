@@ -1,3 +1,14 @@
+<p>
+  <a href="https://github.com/Full-Stack-Development/actions/workflows/lint_test.yml" title="Lint and Test"><img alt="Lint &amp; Test" src="https://img.shields.io/github/workflow/status/Full-Stack-Development/Lint%20&amp;%20Test/main?label=Lint+%26+Test&amp;logo=github&amp;style=flat"></a>
+  <a href="https://app.codecov.io/gh/Full-Stack-Development" title="Code Coverage"><img alt="Code Coverage" src="https://img.shields.io/codecov/c/gh/discord-modmail/modmail/main?logo=codecov&amp;style=flat&amp;label=Code+Coverage"></a>
+  <a href="https://www.codacy.com/gh/Full-Stack-Development/dashboard" title="Codacy Grade"><img alt="Codacy Grade" src="https://img.shields.io/codacy/grade/78be21a49835484595aea556d5920638?logo=codacy&amp;style=flat&amp;label=Code+Quality"></a>
+  <a href="https://www.python.org/downloads/" title="Python 3.8 | 3.9"><img alt="Python" src="https://img.shields.io/static/v1?label=Python&amp;message=3.8+%7C+3.9&amp;color=blue&amp;logo=Python&amp;style=flat"></a>
+  <a href="./LICENSE" title="License file"><img alt="License" src="https://img.shields.io/github/license/discord-modmail/modmail?style=flat&amp;label=License"></a>
+  <a href="https://github.com/psf/black" title="The uncompromising python formatter"><img alt="Code Style" src="https://img.shields.io/static/v1?label=Code%20Style&amp;message=black&amp;color=000000&amp;style=flat"></a>
+</p>
+
+<hr>
+
 # Project API Documentation
 <img src="https://raw.githubusercontent.com/ryanshatch/Full-Stack-Development/main/API%20Responses%20and%20Config/19%20billion%20dollar%20resort.JPG" alt="19 billion dollar resort">
 This document outlines the endpoints for both the backend and frontend components of the project, accessible locally for development purposes.
